@@ -93,7 +93,9 @@ class GraphAnalyzer:
         print("Attempting to establish connection with graph solution...")
 
         self.conn = tg.TigerGraphConnection(host=TG_HOST, username=config['username'], password=config['password'], graphname=config['graphname'])
-        self.conn.apiToken = self.conn.getToken(self.conn.createSecret())
+        self.create_schema()
+
+        self.conn.apiToken = self.conn.getToken(self.conn.createSecret(), setToken=True)
         self.q_n_a = []
 
         currString = ""; prevSpeaker = ""; currSpeaker = ""
@@ -121,7 +123,6 @@ class GraphAnalyzer:
 
         if asked:
             self.q_n_a.append([prevSpeaker, currSpeaker, question])
-            #print(prevSpeaker + " asked " + currSpeaker + " a question.")
 
 
     def create_schema(self):
@@ -142,7 +143,6 @@ class GraphAnalyzer:
 
     def populate_graph(self):
         print("Populating graph with speakers, questions, and answers...")
-        self.create_schema()
         for i in range(len(self.q_n_a)):
             currSpeaker = str(self.q_n_a[i][0])
             nextSpeaker = str(self.q_n_a[i][1])
