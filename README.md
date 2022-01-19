@@ -3,9 +3,7 @@
 This program extracts insights from Zoom Meeting Transcripts (`.vtt`) using TigerGraph and NLTK.
 
 In order to run this program, modify the `auth.ini` file with your proper graph solution credentials
-and file paths. Then, simply run `main.py`. A sample transcript has been provided, but feel free to add your own into the `\a_raw_transcripts` directory!
-
-Kindly find an overview and demo video [hyperlinked here](https://www.youtube.com/watch?v=8v3k_1K4B_Y)
+and file paths. Then, simply run `main.py`. A sample transcript has been provided, but feel free to add your own into the `\a_raw_transcripts` directory! Kindly find an overview and demo video [hyperlinked here](https://www.youtube.com/watch?v=8v3k_1K4B_Y).
 
 &nbsp; &nbsp;
 
